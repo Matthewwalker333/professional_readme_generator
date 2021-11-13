@@ -177,3 +177,5 @@ const init = async () => {
     }
 }
 
+//Function call to initialize program
+init();
