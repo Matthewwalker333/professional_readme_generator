@@ -156,3 +156,11 @@ const questions = [
         ]
     },
 ];
+
+
+//Function to write README file
+const writeToFile = (fileName, data) => {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.error(err) : console.log(success)
+    );
+}
