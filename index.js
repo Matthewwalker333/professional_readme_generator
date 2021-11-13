@@ -164,3 +164,16 @@ const writeToFile = (fileName, data) => {
         err ? console.error(err) : console.log(success)
     );
 }
+
+//Function to initialize the generator 
+const init = async () => {
+    try {
+        await inquirer.prompt(welcome);
+        console.log(letsGo);
+        const data = await inquirer.prompt(questions);
+        writeToFile('./output/README.md', generateMarkdown(data));
+    } catch (err) {
+        console.log(err);
+    }
+}
+
