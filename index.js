@@ -15,3 +15,21 @@ const welcome = [
 
     },
 ];
+
+//Markdown tips
+const letsGo = chalk.greenBright(`\n
+Let's Generate a README!!!
+//~~~~~~~~~~~~~~~~~~~~~~//
+     MD syntax tips
+-------------------------
+Bold    **bold text**
+Italics *italicized text*       
+Links   [title](https://www.example.com)
+Image   ![alt text](image.jpg)
+\n`);
+
+//Success message
+const success = chalk.greenBright(`
+WooHoo! README Generated! It's in the Output folder
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
+`);
