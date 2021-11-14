@@ -2,8 +2,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
-inquirer.registerPrompt('recursive', require('./utils/my-inquirer-recursive.js'));
-const generateMarkdown = require('./utils/generateMarkdown.js');
+inquirer.registerPrompt('recursive', require('my-inquirer-recursive.js'));
+const generateMarkdown = require('generateMarkdown.js');
 
 //Welcome message
 const welcome = [
