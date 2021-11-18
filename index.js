@@ -2,8 +2,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const chalk = require('chalk');
-inquirer.registerPrompt('recursive', require('my-inquirer-recursive.js'));
-const generateMarkdown = require('generateMarkdown.js');
+inquirer.registerPrompt('recursive', require('./my-inquirer-recursive'));
+const generateMarkdown = require('./generateMarkdown');
 
 //Welcome message
 const welcome = [
@@ -19,7 +19,7 @@ const welcome = [
 //Markdown tips
 const letsGo = chalk.greenBright(`\n
 Let's Generate a README!!!
-//~~~~~~~~~~~~~~~~~~~~~~//
+~~~~~~~~~~~~~~~~~~~~~~
      MD syntax tips
 -------------------------
 Bold    **bold text**
@@ -30,8 +30,8 @@ Image   ![alt text](image.jpg)
 
 //Success message
 const success = chalk.greenBright(`
-WooHoo! README Generated! It's in the Output folder
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~// 
+README Generated! It's in the Output folder
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `);
 
 //User questions
@@ -171,7 +171,7 @@ const init = async () => {
         await inquirer.prompt(welcome);
         console.log(letsGo);
         const data = await inquirer.prompt(questions);
-        writeToFile('./output/README.md', generateMarkdown(data));
+        writeToFile('README.md', generateMarkdown(data));
     } catch (err) {
         console.log(err);
     }
